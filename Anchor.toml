@@ -12,7 +12,7 @@ solana_starter_temp = "6ycgerWbKhew5p4Pp1vCNeiSRxVdDVSdmRJ1SG12LkCZ"
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "Localnet"
+cluster = "Devnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]
