@@ -1,0 +1,194 @@
+{
+  "address": "6ycgerWbKhew5p4Pp1vCNeiSRxVdDVSdmRJ1SG12LkCZ",
+  "metadata": {
+    "name": "solana_starter_temp",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "create_note_entry",
+      "discriminator": [
+        142,
+        221,
+        206,
+        155,
+        128,
+        20,
+        12,
+        155
+      ],
+      "accounts": [
+        {
+          "name": "note_entry",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "arg",
+                "path": "title"
+              },
+              {
+                "kind": "account",
+                "path": "owner"
+              }
+            ]
+          }
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "message",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "delete_note_entry",
+      "discriminator": [
+        229,
+        152,
+        205,
+        59,
+        87,
+        176,
+        76,
+        66
+      ],
+      "accounts": [
+        {
+          "name": "note_entry",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "arg",
+                "path": "title"
+              },
+              {
+                "kind": "account",
+                "path": "owner"
+              }
+            ]
+          }
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "title",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "update_note_entry",
+      "discriminator": [
+        68,
+        117,
+        115,
+        5,
+        206,
+        44,
+        172,
+        103
+      ],
+      "accounts": [
+        {
+          "name": "note_entry",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "arg",
+                "path": "title"
+              },
+              {
+                "kind": "account",
+                "path": "owner"
+              }
+            ]
+          }
+        },
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "message",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "NoteEntryState",
+      "discriminator": [
+        91,
+        4,
+        30,
+        244,
+        225,
+        190,
+        122,
+        25
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "NoteEntryState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "message",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}
